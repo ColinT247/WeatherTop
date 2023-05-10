@@ -43,6 +43,43 @@ public class Conversions {
         return weatherState;
     }
 
+    public static String weatherStateIcon(int code)
+    {
+        String weatherStateIconCode = " ";
+        switch(code)
+        {
+            case 100:
+                weatherStateIconCode = "fas fa-3x fa-regular fa-sun";
+                break;
+            case 200:
+                weatherStateIconCode = "fas fa-3x fa-regular fa-cloud-sun";
+                break;
+            case 300:
+                weatherStateIconCode = "fas fa-3x fa-regular fa-cloud";
+                break;
+            case 400:
+                weatherStateIconCode = "fas fa-3x fa-sharp fa-solid fa-cloud-rain";
+                break;
+            case 500:
+                weatherStateIconCode = "fas fa-3x fa-sharp fa-solid fa-cloud-rain";
+                break;
+            case 600:
+                weatherStateIconCode = "fas fa-3x fa-solid fa-cloud-showers-heavy";
+                break;
+            case 700:
+                weatherStateIconCode = "fas fa-3x fa-solid fa-snowflake";
+                break;
+            case 800:
+                weatherStateIconCode = "fas fa-3x fa-regular fa-cloud-bolt";
+                break;
+            default:
+                weatherStateIconCode = "fas fa-3x fa-regular fa-temperature-half";
+                break;
+        }
+
+        return weatherStateIconCode;
+    }
+
     public static int beaufort(int windSpeed)
     {
         int beaufort = 0;

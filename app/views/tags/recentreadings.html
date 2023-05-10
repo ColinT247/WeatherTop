@@ -5,6 +5,13 @@
                 <header class="card-header-title has-text-white">
                     ${_station.getName()}
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <span class="icon is-large has-text-info">
+                            <i class="fas fa-3x fa-regular fa-location-dot"></i>
+                        </span>
+                    </figure>
+                </div>
                 <div class="card-content">
                     <div class="content has-text-white">
                         Latitude: ${_station.getLatitude()}<br>
@@ -14,11 +21,19 @@
             </div>
         </div>
 
+<!--        Learned how to use variables in html here. https://www.educative.io/answers/how-to-use-the-var-element-in-html-->
         <div class="column">
             <div class="card has-background-black">
                 <header class="card-header-title has-text-white">
                     Weather
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <span class="icon is-large has-text-info">
+                            <i class= "<var> ${_station.listLatestReading().getWeatherStateIcon()} </var> "></i>
+                        </span>
+                    </figure>
+                </div>
                 <div class="card-content">
                     <div class="content has-text-white">
                         ${_station.listLatestReading().getWeatherState()} <br><br><br><br>
@@ -32,6 +47,13 @@
                 <header class="card-header-title has-text-white">
                     Temperature
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <span class="icon is-large has-text-info">
+                            <i class="fas fa-3x fa-regular fa-temperature-half"></i>
+                        </span>
+                    </figure>
+                </div>
                 <div class="card-content">
                     <div class="content has-text-white">
                         ${_station.listLatestReading().getTemperature()} C <br><br>
@@ -46,6 +68,13 @@
                 <header class="card-header-title has-text-white">
                     Wind Speed
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <span class="icon is-large has-text-info">
+                            <i class="fas fa-3x fa-regular fa-wind"></i>
+                        </span>
+                    </figure>
+                </div>
                 <div class="card-content">
                     <div class="content has-text-white">
                         ${_station.listLatestReading().getWindSpeed()} km/hr <br>
@@ -63,6 +92,13 @@
                 <header class="card-header-title has-text-white">
                     Pressure
                 </header>
+                <div class="card-image">
+                    <figure class="image">
+                        <span class="icon is-large has-text-info">
+                            <i class="fas fa-3x fa-regular fa-gauge"></i>
+                        </span>
+                    </figure>
+                </div>
                 <div class="card-content">
                     <div class="content has-text-white">
                         ${_station.listLatestReading().getPressure()} hPa <br><br><br><br>

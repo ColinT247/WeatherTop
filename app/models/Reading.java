@@ -80,5 +80,6 @@ public class Reading extends Model
         return utils.Conversions.feelsLike(this.temperature, this.windSpeed);
     }
 
+    public String getWeatherStateIcon(){return utils.Conversions.weatherStateIcon(this.code);}
 
 }
