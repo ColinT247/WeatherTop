@@ -1,0 +1,73 @@
+<table class="table is-bordered">
+    <div class="columns">
+        <div class="column">
+            <div class="card has-background-black">
+                <header class="card-header-title has-text-white">
+                    Station
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-white">
+                        ${_station.getName()} <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card has-background-black">
+                <header class="card-header-title has-text-white">
+                    Weather
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-white">
+                        ${_station.listLatestReading().getWeatherState()} <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card has-background-black">
+                <header class="card-header-title has-text-white">
+                    Temperature
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-white">
+                        ${_station.listLatestReading().getTemperature()} C <br><br>
+                        ${_station.listLatestReading().getTempInF()} F <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card has-background-black">
+                <header class="card-header-title has-text-white">
+                    Wind Speed
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-white">
+                        ${_station.listLatestReading().getWindSpeed()} km/hr <br>
+                        ${_station.listLatestReading().getBeaufort()} bft <br>
+                        ${_station.listLatestReading().getWindDirectionCompass()} <br>
+                        Feels like: ${_station.listLatestReading().getfeelsLike()} C
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card has-background-black">
+                <header class="card-header-title has-text-white">
+                    Pressure
+                </header>
+                <div class="card-content">
+                    <div class="content has-text-white">
+                        ${_station.listLatestReading().getPressure()} hPa <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</table>

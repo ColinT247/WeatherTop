@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"admin"/}
+
+<div class="content box">
+  <h1 class="title">
+    All Readings in the Database:
+  </h1>
+
+<!--  NOTE TABLE HEADINGS AND VALUES TO BE FIXED UP IF (CORRECT VALUES USED) IF THIS PAGE IS TO BE USEABLE-->
+  <table class="ui fixed table">
+    <thead>
+    <tr>
+      <th>ID </th>
+      <th>Reading</th>
+      <th>Station</th>
+      <th>Duration</th>
+    </tr>
+    </thead>
+    <tbody>
+    #{list items:readings, as:'reading'}
+    <tr>
+      <td>
+        ${reading.id}
+      </td>
+      <td>
+        ${reading.temperature}
+      </td>
+      <td>
+        ${reading.windDirection}
+      </td>
+      <td>
+        ${reading.pressure}
+      </td>
+    </tr>
+    #{/list}
+    </tbody>
+  </table>
+</div>
