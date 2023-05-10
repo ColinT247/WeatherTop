@@ -24,15 +24,15 @@ public class Dashboard extends Controller
     member.stations.remove(station);
     member.save();
     station.delete();
-    Logger.info("Removing Station:"+station.name);
+    Logger.info("Removing Station: "+station.name);
     redirect("/dashboard");
   }
 
-  public static void addStation(String name)
+  public static void addStation(String name, double latitude, double longitude)
   {
     Member member = Accounts.getLoggedInMember();
-    Station station = new Station(name);
-    Logger.info("Adding new Station called:" + name);
+    Station station = new Station(name, latitude, longitude);
+    Logger.info("Adding new Station called: " + name);
     member.stations.add(station);
     member.save();
     redirect("/dashboard");

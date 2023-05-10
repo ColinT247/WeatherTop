@@ -13,19 +13,31 @@ import play.db.jpa.Model;
 public class Station extends Model
 {
     public String name;
+    public double latitude;
+    public double longitude;
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
 
     //constructor
-    public Station(String name)
+    public Station(String name, double latitude, double longitude)
     {
         this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     //getters
     public String getName()
     {
         return name;
+    }
+
+    public double getLatitude(){
+        return latitude;
+    }
+
+    public double getLongitude(){
+        return longitude;
     }
 
     public List<Reading> getReadings()
@@ -37,6 +49,14 @@ public class Station extends Model
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public void setLatitude(double latitude){
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude){
+        this.longitude = longitude;
     }
 
     public void setReadings(List<Reading> readings)
