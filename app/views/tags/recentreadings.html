@@ -82,7 +82,9 @@
                         ${_station.listLatestReading().getWindSpeed()} km/hr <br>
                         ${_station.listLatestReading().getBeaufort()} bft <br>
                         ${_station.listLatestReading().getWindDirectionCompass()} <br>
-                        Feels like: ${_station.listLatestReading().getfeelsLike()} C
+                        Feels like: ${_station.listLatestReading().getfeelsLike()} C<br>
+                        Max Wind Speed:  ${_station.maxWindSpeed()} km/hr<br>
+                        Min Wind Speed:  ${_station.minWindSpeed()} km/hr<br>
 
                     </div>
                 </div>
@@ -103,7 +105,9 @@
                 </div>
                 <div class="card-content">
                     <div class="content has-text-white">
-                        ${_station.listLatestReading().getPressure()} hPa <br><br><br><br>
+                        ${_station.listLatestReading().getPressure()} hPa <br><br>
+                        Max Pressure:  ${_station.maxPressure()} hPa<br>
+                        Min Pressure:  ${_station.minPressure()} hPa<br>
                     </div>
                 </div>
             </div>
