@@ -77,6 +77,34 @@ public class Station extends Model
         }
     }
 
+    public float maxTemp(){
+        if(readings.size()>0){
+            Reading reading = readings.get(0);
+            for(int i= 0; i < getReadings().size(); i++) {
+                if(readings.get(i).getTemperature() > reading.getTemperature()){
+                    reading = readings.get(i);
+                }
+            }
+            return reading.getTemperature();
+        }
+        else return 0;
+    }
+
+    public float minTemp(){
+        if(readings.size()>0){
+            Reading reading = readings.get(0);
+            for(int i= 0; i < getReadings().size(); i++) {
+                if(readings.get(i).getTemperature() < reading.getTemperature()){
+                    reading = readings.get(i);
+                }
+            }
+            return reading.getTemperature();
+        }
+        else return 0;
+    }
+
+
+
 
 
 

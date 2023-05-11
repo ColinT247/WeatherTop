@@ -56,8 +56,10 @@
                 </div>
                 <div class="card-content">
                     <div class="content has-text-white">
-                        ${_station.listLatestReading().getTemperature()} C <br><br>
-                        ${_station.listLatestReading().getTempInF()} F <br><br>
+                        Current Temp: <br> ${_station.listLatestReading().getTemperature()} C <br>
+                        ${_station.listLatestReading().getTempInF()} F <br>
+                        Max Temp: ${_station.maxTemp()} C<br>
+                        Min Temp: ${_station.minTemp()} C
                     </div>
                 </div>
             </div>
