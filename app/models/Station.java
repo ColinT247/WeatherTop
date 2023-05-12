@@ -6,7 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-
+import java.time.Clock;
+import java.time.Instant;
 import play.db.jpa.Model;
 
 @Entity
@@ -72,7 +73,7 @@ public class Station extends Model
             return latestReading;
         }
         else {
-            Reading latestReading = new Reading(0, 0, 0, 0, 0);
+            Reading latestReading = new Reading("19700101T000000Z", 0, 0, 0, 0, 0);
             return latestReading;
         }
     }
@@ -165,6 +166,12 @@ public class Station extends Model
         else {
             return 0;
         }
+    }
+
+    public static String timeStamp(){
+        Instant instant1 = Instant.now();
+        String formattedInstant = instant1.toString();
+        return formattedInstant;
     }
 
 

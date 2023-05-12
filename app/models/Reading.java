@@ -5,10 +5,13 @@ import javax.persistence.Entity;
 import play.db.jpa.Model;
 
 import utils.Conversions;
+import java.time.Clock;
+import java.time.Instant;
 
 @Entity
 public class Reading extends Model
 {
+    public String timeStamp;
     public int code;
     public float temperature;
     public int windSpeed;
@@ -16,8 +19,9 @@ public class Reading extends Model
     public int windDirection;
 
     //constructor
-    public Reading(int code, float temperature, int windSpeed,int windDirection, long pressure)
+    public Reading(String timeStamp, int code, float temperature, int windSpeed,int windDirection, long pressure)
     {
+        this.timeStamp = timeStamp;
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;

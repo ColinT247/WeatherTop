@@ -1,6 +1,7 @@
 <table class="table is-bordered">
   <thead>
   <tr>
+    <th>Time Stamp</th>
     <th>Code</th>
     <th>Temperature</th>
     <th>Wind Speed</th>
@@ -13,6 +14,9 @@
   <tbody>
   #{list items:_station.readings, as:'reading'}
   <tr>
+    <td>
+      ${reading.timeStamp}
+    </td>
     <td>
       ${reading.code}
     </td>

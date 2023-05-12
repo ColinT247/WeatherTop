@@ -17,9 +17,9 @@ POST    /authenticate                           Accounts.authenticate
 GET     /dashboard/deletestation/{id}           Dashboard.deleteStation
 POST    /dashboard/addstation                   Dashboard.addStation
 
-GET     /stations/{id}                          StationCtrl.index
-GET     /stations/{id}/deletereading/{readingid}  StationCtrl.deleteReading
-POST    /stations/{id}/addreading               StationCtrl.addReading
+GET     /stations/{id}                              StationCtrl.index
+GET     /stations/{id}/deletereading/{readingid}    StationCtrl.deleteReading
+POST    /stations/{id}/addreading                   StationCtrl.addReading
 
 
 # Ignore favicon requests
