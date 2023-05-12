@@ -168,13 +168,10 @@ public class Station extends Model
         }
     }
 
-    public static String timeStamp(){
-        Instant instant1 = Instant.now();
-        String formattedInstant = instant1.toString();
-        return formattedInstant;
+
     }
 
 
 
 
-}
+

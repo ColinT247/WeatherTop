@@ -1,5 +1,11 @@
 package utils;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+
 public class Conversions {
 
     public static float tempInF(float temp)
@@ -194,6 +200,15 @@ public class Conversions {
         feelsLike = 13.12 + 0.6215 * temperature - 11.37 * (Math.pow(windSpeed, 0.16)) + 0.3965 * temperature * (Math.pow(windSpeed, 0.16));
         feelsLike = Math.round(feelsLike*10.0)/10.0;
         return feelsLike;
+    }
+
+    //https://java2blog.com/format-instant-to-string-java/
+    public static String timeStamp() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withLocale( Locale.UK ).withZone( ZoneId.systemDefault() );
+        Instant instant = Instant.now();
+        String instantStr = formatter.format(instant);
+        return instantStr;
     }
 
 }

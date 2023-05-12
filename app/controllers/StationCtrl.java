@@ -30,7 +30,7 @@ public class StationCtrl extends Controller
 
     public static void addReading(long id, int code, float temperature, int windSpeed, int windDirection, long pressure)
     {
-        String timeStamp = Station.timeStamp();
+        String timeStamp = utils.Conversions.timeStamp();
         Reading reading = new Reading(timeStamp, code, temperature, windSpeed, windDirection, pressure);
         Station station = Station.findById(id);
         station.readings.add(reading);
