@@ -73,7 +73,7 @@ public class Station extends Model
             return latestReading;
         }
         else {
-            Reading latestReading = new Reading("19700101T000000Z", 0, 0, 0, 0, 0);
+            Reading latestReading = new Reading("Unknown", 0, 0, 0, 0, 0);
             return latestReading;
         }
     }
