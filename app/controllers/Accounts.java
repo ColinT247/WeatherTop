@@ -75,26 +75,33 @@ public class Accounts extends Controller
     public static void updateDetails(String newFirstname, String newLastname, String newEmail, String oldPassword, String newPassword, String confirmNewPassword)
     {
         Member member = getLoggedInMember();
+        String details = "";
         if(member.checkPassword(oldPassword)){
+            //if some details were updated. ie: the updateMember method returns true
             if(member.updateMember(newFirstname, newLastname, newEmail, newPassword, confirmNewPassword)) {
                 Logger.info("Account details updated: Firstname " + newFirstname + "  Lastname " + newLastname + " Email " + newEmail + " Password " + newPassword);
                 member.save();
-                session.clear();
-                render("success.html");
+                render("success.html", member);
             }
-            else{
-                Logger.info("Password was correct but no details updated");
+            //if update member method returns false AND the new passwords don't match
+            else if((!member.updateMember(newFirstname, newLastname, newEmail, newPassword, confirmNewPassword)) && (!newPassword.equals(confirmNewPassword))){
+                Logger.info("New passwords did match. No details updated");
                 member.save();
-                session.clear();
-                render("success.html");
+                details = "New passwords did not match. No details updated";
+                noSuccess(details);
             }
         }
+        //password not entered or incorrect - no details will be changed
         else{
             Logger.info("Password was incorrect - no details changed");
             member.save();
             session.clear();
-            render("noSuccess.html");
+            details = "Incorrect password. No details were updated. You must login again";
+            render("nosuccess.html", details);
         }
     }
 
+    public static void noSuccess(String details){
+        render("nosuccess.html", details);
+    }
 }
