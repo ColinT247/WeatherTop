@@ -11,7 +11,7 @@ public class StationCtrl extends Controller
 {
     public static void index(Long id)
     {
-        //if condiiton only shows stations if there is someone logged in! without this someone could bypass login. 
+        //if condiiton only shows stations if there is someone logged in! without this someone could bypass login.
         if(session.contains("logged_in_Memberid")){
             Station station = Station.findById(id);
             Logger.info ("Playlist id = " + id);

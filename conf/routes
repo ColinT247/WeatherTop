@@ -10,7 +10,9 @@ GET     /admin                                  Admin.index
 GET     /signup                                 Accounts.signup
 GET     /login                                  Accounts.login
 GET     /logout                                 Accounts.logout
+GET     /update                                 Accounts.update
 
+POST    /updateDetails                          Accounts.updateDetails
 POST    /register                               Accounts.register
 POST    /authenticate                           Accounts.authenticate
 

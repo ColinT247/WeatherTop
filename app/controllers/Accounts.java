@@ -1,14 +1,28 @@
 package controllers;
 
+import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 import models.Member;
+
+import java.util.List;
 
 public class Accounts extends Controller
 {
     public static void signup()
     {
         render("signup.html");
+    }
+
+    public static void update()
+    {
+        if(session.contains("logged_in_Memberid")) {
+            Member member = Accounts.getLoggedInMember();
+            render("update.html", member);
+        }
+        else{
+            render("login.html");
+        }
     }
 
     public static void login()
@@ -56,6 +70,31 @@ public class Accounts extends Controller
             login();
         }
         return member;
+    }
+
+    public static void updateDetails(String newFirstname, String newLastname, String newEmail, String oldPassword, String newPassword, String confirmNewPassword)
+    {
+        Member member = getLoggedInMember();
+        if(member.checkPassword(oldPassword)){
+            if(member.updateMember(newFirstname, newLastname, newEmail, newPassword, confirmNewPassword)) {
+                Logger.info("Account details updated: Firstname " + newFirstname + "  Lastname " + newLastname + " Email " + newEmail + " Password " + newPassword);
+                member.save();
+                session.clear();
+                render("success.html");
+            }
+            else{
+                Logger.info("Password was correct but no details updated");
+                member.save();
+                session.clear();
+                render("success.html");
+            }
+        }
+        else{
+            Logger.info("Password was incorrect - no details changed");
+            member.save();
+            session.clear();
+            render("noSuccess.html");
+        }
     }
 
 }
