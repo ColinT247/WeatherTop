@@ -1,49 +1,49 @@
 <form action="/stations/${_station.id}/addreading" method="POST">
-    <div class="columns">
-        <div class="field column">
-            <label class="label">Weather</label>
-            <div class="control">
-                <input class="input" placeholder="Weather Code" type="Text" list = "weatherCodes" name="code">
-                <datalist id="weatherCodes">
-                    <option value="100">Clear</option>
-                    <option value="200">Partial Clouds</option>
-                    <option value="300">Cloudy</option>
-                    <option value="400">Light Showers</option>
-                    <option value="500">Heavy Showers</option>
-                    <option value="600">Rain</option>
-                    <option value="700">Snow</option>
-                    <option value="800">Thunder</option>
-                </datalist>
-            </div>
-        </div>
-        <div class="field column">
-            <label class="label">Temperature</label>
-            <div class="control">
-                <input class="input" placeholder="10" type="number" name="temperature">
-            </div>
-        </div>
-        <div class="field column">
-            <label class="label">Wind Speed</label>
-            <div class="control">
-                <input class="input" placeholder="5" type="number" name="windSpeed">
-            </div>
-        </div>
-        <div class="field column">
-            <label class="label">Wind Direction</label>
-            <div class="control">
-                <input class="input" placeholder="180" type="number" name="windDirection">
-            </div>
-        </div>
-        <div class="field column">
-            <label class="label">Pressure</label>
-            <div class="control">
-                <input class="input" placeholder="1013" type="number" name="pressure">
-            </div>
-        </div>
+  <div class="columns">
+    <div class="field column">
+      <label class="label">Weather</label>
+      <div class="control">
+        <input class="input" placeholder="Weather Code" type="Text" list="weatherCodes" name="code">
+        <datalist id="weatherCodes">
+          <option value="100">Clear</option>
+          <option value="200">Partial Clouds</option>
+          <option value="300">Cloudy</option>
+          <option value="400">Light Showers</option>
+          <option value="500">Heavy Showers</option>
+          <option value="600">Rain</option>
+          <option value="700">Snow</option>
+          <option value="800">Thunder</option>
+        </datalist>
+      </div>
     </div>
-    <div class="field mt-4">
-        <div class="control">
-            <button class="button is-info">Add Reading</button>
-        </div>
+    <div class="field column">
+      <label class="label">Temperature</label>
+      <div class="control">
+        <input class="input" placeholder="10" type="number" name="temperature">
+      </div>
     </div>
+    <div class="field column">
+      <label class="label">Wind Speed</label>
+      <div class="control">
+        <input class="input" placeholder="5" type="number" name="windSpeed">
+      </div>
+    </div>
+    <div class="field column">
+      <label class="label">Wind Direction</label>
+      <div class="control">
+        <input class="input" placeholder="180" type="number" name="windDirection">
+      </div>
+    </div>
+    <div class="field column">
+      <label class="label">Pressure</label>
+      <div class="control">
+        <input class="input" placeholder="1013" type="number" name="pressure">
+      </div>
+    </div>
+  </div>
+  <div class="field mt-4">
+    <div class="control">
+      <button class="button is-info">Add Reading</button>
+    </div>
+  </div>
 </form>

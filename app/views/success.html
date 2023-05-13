@@ -3,18 +3,20 @@
 #{menu id:"success"/}
 
 <section class="content box">
-    <div class="columns">
-        <div class="column is-half">
-            <h1>Success!</h1>
-                <h2 class="subtitle">Account Details Updated</h2>
-                <p><strong>First Name:</strong> ${member.firstname} <strong> Last Name:</strong> ${member.lastname}</p>
-                <p><strong>Email:</strong> ${member.email}</p>
-                <button class="button is-link is-info">Login</button>
-        </div>
-        <div class="column is-half">
-            <figure class="image is-square">
-                <img src="/public/images/todo-1.jpg">
-            </figure>
-        </div>
+  <div class="columns">
+    <div class="column is-half">
+      <h1>Success!</h1>
+      <h2 class="subtitle">Account Details Updated</h2>
+      <p><strong>First Name:</strong> ${member.firstname} <strong> Last Name:</strong> ${member.lastname}</p>
+      <p><strong>Email:</strong> ${member.email}</p>
+      <a href="/dashboard">
+        <button class="button is-link is-info">Dashboard</button>
+      </a>
     </div>
+    <div class="column is-half">
+      <figure class="image is-square">
+        <img src="/public/images/todo-1.jpg">
+      </figure>
+    </div>
+  </div>
 </section>

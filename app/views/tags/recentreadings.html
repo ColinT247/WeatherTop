@@ -1,116 +1,116 @@
 <table class="table is-bordered">
-    <div class="columns">
-        <div class="column">
-            <div class="card has-background-black">
-                <header class="card-header-title has-text-white">
-                    ${_station.getName()}
-                </header>
-                <div class="card-image">
-                    <figure class="image">
+  <div class="columns">
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header-title has-text-white">
+          ${_station.getName()}
+        </header>
+        <div class="card-image">
+          <figure class="image">
                         <span class="icon is-large has-text-info">
                             <i class="fas fa-3x fa-regular fa-location-dot"></i>
                         </span>
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content has-text-white">
-                        Latitude: ${_station.getLatitude()}<br>
-                        Longitude: ${_station.getLongitude()}<br><br><br>
-                    </div>
-                </div>
-            </div>
+          </figure>
         </div>
+        <div class="card-content">
+          <div class="content has-text-white">
+            Latitude: ${_station.getLatitude()}<br>
+            Longitude: ${_station.getLongitude()}<br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<!--        Learned how to use variables in html here. https://www.educative.io/answers/how-to-use-the-var-element-in-html-->
-        <div class="column">
-            <div class="card has-background-black">
-                <header class="card-header-title has-text-white">
-                    Weather
-                </header>
-                <div class="card-image">
-                    <figure class="image">
+    <!--        Learned how to use variables in html here. https://www.educative.io/answers/how-to-use-the-var-element-in-html-->
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header-title has-text-white">
+          Weather
+        </header>
+        <div class="card-image">
+          <figure class="image">
                         <span class="icon is-large has-text-info">
-                            <i class= "<var> ${_station.listLatestReading().getWeatherStateIcon()} </var> "></i>
+                            <i class="<var> ${_station.listLatestReading().getWeatherStateIcon()} </var> "></i>
                         </span>
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content has-text-white">
-                        ${_station.listLatestReading().getWeatherState()} <br><br><br><br>
-                    </div>
-                </div>
-            </div>
+          </figure>
         </div>
+        <div class="card-content">
+          <div class="content has-text-white">
+            ${_station.listLatestReading().getWeatherState()} <br><br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="column">
-            <div class="card has-background-black">
-                <header class="card-header-title has-text-white">
-                    Temperature
-                </header>
-                <div class="card-image">
-                    <figure class="image">
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header-title has-text-white">
+          Temperature
+        </header>
+        <div class="card-image">
+          <figure class="image">
                         <span class="icon is-large has-text-info">
                             <i class="fas fa-3x fa-regular fa-temperature-half"></i>
                         </span>
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content has-text-white">
-                        Current Temp: <br> ${_station.listLatestReading().getTemperature()} C <br>
-                        ${_station.listLatestReading().getTempInF()} F <br>
-                        Max: ${_station.maxTemp()} C<br>
-                        Min: ${_station.minTemp()} C
-                    </div>
-                </div>
-            </div>
+          </figure>
         </div>
+        <div class="card-content">
+          <div class="content has-text-white">
+            Current Temp: <br> ${_station.listLatestReading().getTemperature()} C <br>
+            ${_station.listLatestReading().getTempInF()} F <br>
+            Max: ${_station.maxTemp()} C<br>
+            Min: ${_station.minTemp()} C
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="column">
-            <div class="card has-background-black">
-                <header class="card-header-title has-text-white">
-                    Wind Speed
-                </header>
-                <div class="card-image">
-                    <figure class="image">
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header-title has-text-white">
+          Wind Speed
+        </header>
+        <div class="card-image">
+          <figure class="image">
                         <span class="icon is-large has-text-info">
                             <i class="fas fa-3x fa-regular fa-wind"></i>
                         </span>
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content has-text-white">
-                        ${_station.listLatestReading().getWindSpeed()} km/hr <br>
-                        ${_station.listLatestReading().getBeaufort()} bft <br>
-                        ${_station.listLatestReading().getWindDirectionCompass()} <br>
-                        Feels like: ${_station.listLatestReading().getfeelsLike()} C<br>
-                        Max:  ${_station.maxWindSpeed()} km/hr<br>
-                        Min:  ${_station.minWindSpeed()} km/hr<br>
-
-                    </div>
-                </div>
-            </div>
+          </figure>
         </div>
+        <div class="card-content">
+          <div class="content has-text-white">
+            ${_station.listLatestReading().getWindSpeed()} km/hr <br>
+            ${_station.listLatestReading().getBeaufort()} bft <br>
+            ${_station.listLatestReading().getWindDirectionCompass()} <br>
+            Feels like: ${_station.listLatestReading().getfeelsLike()} C<br>
+            Max: ${_station.maxWindSpeed()} km/hr<br>
+            Min: ${_station.minWindSpeed()} km/hr<br>
 
-        <div class="column">
-            <div class="card has-background-black">
-                <header class="card-header-title has-text-white">
-                    Pressure
-                </header>
-                <div class="card-image">
-                    <figure class="image">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header-title has-text-white">
+          Pressure
+        </header>
+        <div class="card-image">
+          <figure class="image">
                         <span class="icon is-large has-text-info">
                             <i class="fas fa-3x fa-regular fa-gauge"></i>
                         </span>
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content has-text-white">
-                        ${_station.listLatestReading().getPressure()} hPa <br><br>
-                        Max:  ${_station.maxPressure()} hPa<br>
-                        Min:  ${_station.minPressure()} hPa<br>
-                    </div>
-                </div>
-            </div>
+          </figure>
         </div>
+        <div class="card-content">
+          <div class="content has-text-white">
+            ${_station.listLatestReading().getPressure()} hPa <br><br>
+            Max: ${_station.maxPressure()} hPa<br>
+            Min: ${_station.minPressure()} hPa<br>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </table>
