@@ -6,6 +6,7 @@
 GET     /                                       Start.index
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
+GET     /aboutout                               Aboutout.index
 GET     /admin                                  Admin.index
 GET     /signup                                 Accounts.signup
 GET     /login                                  Accounts.login

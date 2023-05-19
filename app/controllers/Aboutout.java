@@ -4,10 +4,9 @@ import play.mvc.*;
 import java.util.*;
 import models.*;
 
-public class About extends Controller {
+public class Aboutout extends Controller {
   public static void index() {
-    Logger.info("Rendering about");
-    render("about.html");
+    Logger.info("Rendering aboutout");
+    render("aboutout.html");
   }
 }
-
