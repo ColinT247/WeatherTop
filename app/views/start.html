@@ -1,24 +1,45 @@
 #{extends 'main.html' /}
 #{set title:'Welcome' /}
-
 #{welcomemenu id:"start"/}
 
-<div class="content box">
-  <p class="title">
-    WeatherTop
-  </p>
-  <p>
-    An accounts based weather monitoring app! <br>
-  </p>
-  <p>
-    Click below to get started
-  </p>
+<section class="content box">
+  <div class="columns">
+    <div class="column is-half">
+      <p class="title">
+        WeatherTop
+      </p>
+      <p class="subtitle">
+        An accounts based weather monitoring app!
+      </p>
+      <p>
+        Create an account to get started. Once you have an account you can create your weather stations and begin
+        building your database of weather data and readings.
+      </p>
+      <p>
+        A broad spectrum of weather data can be handled, including:
+        <ul>
+          <li>Temperature</li>
+          <li>Weather Conditions</li>
+          <li>Windspeed & Direction</li>
+          <li>Real feel</li>
+          <li>Pressure</li>
+        </ul>
+      </p>
 
-  <a id="login" href="/login">
-    <button class="button is-info">Login</button>
-  </a>
-  <a id="signup" href="/signup">
-    <button class="button is-info">Signup</button>
-  </a>
-
-</div>
+      <p>
+        Click below to get started
+      </p>
+      <a id="login" href="/login">
+        <button class="button is-info">Login</button>
+      </a>
+      <a id="signup" href="/signup">
+        <button class="button is-info">Signup</button>
+      </a>
+    </div>
+    <div class = "column is-half">
+      <figure class="image">
+        <img src="/public/images/weathertop-watch-tower.jpg">
+      </figure>
+    </div>
+  </div>
+</section>

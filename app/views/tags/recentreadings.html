@@ -56,8 +56,9 @@
         </div>
         <div class="card-content">
           <div class="content has-text-white">
-            Current Temp: <br> ${_station.listLatestReading().getTemperature()} C <br>
-            ${_station.listLatestReading().getTempInF()} F <br>
+            ${_station.listLatestReading().getTemperature()}&degC
+            (${_station.listLatestReading().getTempInF()}&degF) <br>
+            Feels like: ${_station.listLatestReading().getfeelsLike()} C<br>
             Max: ${_station.maxTemp()} C<br>
             Min: ${_station.minTemp()} C
           </div>
@@ -79,13 +80,11 @@
         </div>
         <div class="card-content">
           <div class="content has-text-white">
-            ${_station.listLatestReading().getWindSpeed()} km/hr <br>
+            ${_station.listLatestReading().getWindSpeed()} km/hr
             ${_station.listLatestReading().getBeaufort()} bft <br>
             ${_station.listLatestReading().getWindDirectionCompass()} <br>
-            Feels like: ${_station.listLatestReading().getfeelsLike()} C<br>
             Max: ${_station.maxWindSpeed()} km/hr<br>
             Min: ${_station.minWindSpeed()} km/hr<br>
-
           </div>
         </div>
       </div>
