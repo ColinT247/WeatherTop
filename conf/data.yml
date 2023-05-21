@@ -33,6 +33,13 @@ Reading(r5):
   windSpeed: 2.5
   windDirection: 180
   pressure: 995
+Reading(r6):
+  timeStamp: "2022-03-04 09:50:00"
+  code: 400
+  temperature: 1.5
+  windSpeed: 2.5
+  windDirection: 180
+  pressure: 995
 
 
 Station(s1):
@@ -52,6 +59,13 @@ Station(s2):
   - r4
   - r5
 
+Station(s3):
+  name: Baldonnel
+  latitude: 53.4658
+  longitude: -7.01234
+  readings:
+  - r6
+
 
 Member(m1):
   email: homer@simpson.com
@@ -61,4 +75,13 @@ Member(m1):
   stations:
     - s1
     - s2
+
+
+Member(m2):
+  email: marge@simpson.com
+  password: secret
+  firstname: Marge
+  lastname: Simpson
+  stations:
+    - s3
 
