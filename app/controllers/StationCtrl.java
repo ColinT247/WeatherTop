@@ -31,24 +31,19 @@ public class StationCtrl extends Controller {
     render("station.html", station);
   }
 
-
   public static void addReading(long id, int code, float temperature, int windSpeed, int windDirection, long pressure) {
     String timeStamp = utils.Conversions.timeStamp();
-    if(code != 0) {
+    if (code != 0) {
       Reading reading = new Reading(timeStamp, code, temperature, windSpeed, windDirection, pressure);
       Station station = Station.findById(id);
       station.readings.add(reading);
       station.save();
       Logger.info("Adding reading");
       redirect("/stations/" + id);
-    }else{
+    } else {
       Logger.info("No reading added. No details");
       redirect("/stations/" + id);
     }
-
-
   }
-
-
 }
 
