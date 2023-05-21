@@ -28,11 +28,17 @@ public class Dashboard extends Controller {
 
   public static void addStation(String name, double latitude, double longitude) {
     Member member = Accounts.getLoggedInMember();
-    Station station = new Station(name, latitude, longitude);
-    Logger.info("Adding new Station called: " + name);
-    member.stations.add(station);
-    member.save();
-    redirect("/dashboard");
+    if(!name.isEmpty()) {
+      Station station = new Station(name, latitude, longitude);
+      Logger.info("Adding new Station called: " + name);
+      member.stations.add(station);
+      member.save();
+      redirect("/dashboard");
+    }
+    else{
+      Logger.info("Didn't add station. No name was entered");
+      redirect("/dashboard");
+    }
   }
 
 }
